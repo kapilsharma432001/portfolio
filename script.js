@@ -40,6 +40,8 @@ const navLinks = document.querySelectorAll('.nav-link');
 
 // Scroll effect
 let lastScroll = 0;
+const scrollHint = document.querySelector('.scroll-hint');
+
 window.addEventListener('scroll', () => {
     const currentScroll = window.scrollY;
 
@@ -47,6 +49,15 @@ window.addEventListener('scroll', () => {
         navbar.classList.add('scrolled');
     } else {
         navbar.classList.remove('scrolled');
+    }
+
+    // Hide scroll hint when scrolled past hero
+    if (scrollHint) {
+        if (currentScroll > 100) {
+            scrollHint.style.opacity = '0';
+        } else {
+            scrollHint.style.opacity = '1';
+        }
     }
 
     lastScroll = currentScroll;
@@ -188,4 +199,215 @@ window.addEventListener('load', () => {
 const yearElement = document.querySelector('.footer-year');
 if (yearElement) {
     yearElement.textContent = `© ${new Date().getFullYear()}`;
+}
+
+// ===== Terminal Typing Animation =====
+const terminalCommands = [
+    {
+        command: 'cat about.txt',
+        output: [
+            '→ Backend Engineer with 4.5+ years of experience',
+            '→ Python • FastAPI • Django • AWS enthusiast',
+            '→ Currently building @ Tiger Analytics',
+            '→ Making machines think (sometimes correctly)'
+        ]
+    },
+    {
+        command: 'ls skills/',
+        output: [
+            'python/  aws/  databases/  docker/',
+            'terraform/  langchain/  fastapi/'
+        ]
+    },
+    {
+        command: './run_server.py --mode=awesome',
+        output: [
+            '🚀 Server starting on port 8000...',
+            '✓ API ready to handle your requests!'
+        ]
+    }
+];
+
+let currentCommandIndex = 0;
+let currentCharIndex = 0;
+let isTyping = false;
+let isDeleting = false;
+const typingElement = document.getElementById('typing-command');
+const outputElement = document.getElementById('terminal-output');
+const cursorElement = document.querySelector('.terminal-cursor');
+
+function typeCommand() {
+    if (!typingElement) return;
+
+    const currentCmd = terminalCommands[currentCommandIndex];
+
+    if (!isDeleting) {
+        // Typing the command
+        if (currentCharIndex < currentCmd.command.length) {
+            typingElement.textContent += currentCmd.command[currentCharIndex];
+            currentCharIndex++;
+            setTimeout(typeCommand, 50 + Math.random() * 50);
+        } else {
+            // Command complete, show output
+            setTimeout(showOutput, 300);
+        }
+    }
+}
+
+function showOutput() {
+    const currentCmd = terminalCommands[currentCommandIndex];
+    outputElement.innerHTML = '';
+
+    currentCmd.output.forEach((line, index) => {
+        setTimeout(() => {
+            const lineEl = document.createElement('div');
+            lineEl.className = 'output-line';
+            lineEl.textContent = line;
+            lineEl.style.animationDelay = `${index * 0.1}s`;
+            outputElement.appendChild(lineEl);
+
+            // After last line, wait and move to next command
+            if (index === currentCmd.output.length - 1) {
+                setTimeout(nextCommand, 2500);
+            }
+        }, index * 200);
+    });
+}
+
+function nextCommand() {
+    // Clear for next command
+    typingElement.textContent = '';
+    outputElement.innerHTML = '';
+    currentCharIndex = 0;
+    currentCommandIndex = (currentCommandIndex + 1) % terminalCommands.length;
+
+    setTimeout(typeCommand, 500);
+}
+
+// Start terminal animation after page load
+setTimeout(() => {
+    typeCommand();
+}, 1000);
+
+// ===== Animated Stats Counter =====
+const statNumbers = document.querySelectorAll('.stat-number');
+let statsAnimated = false;
+
+function animateStats() {
+    if (statsAnimated) return;
+
+    const statsSection = document.querySelector('.stats-grid');
+    if (!statsSection) return;
+
+    const rect = statsSection.getBoundingClientRect();
+    const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+    if (isVisible) {
+        statsAnimated = true;
+
+        statNumbers.forEach(stat => {
+            const target = parseInt(stat.dataset.target);
+            const suffix = stat.dataset.suffix || '';
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const counter = setInterval(() => {
+                current += step;
+                if (current >= target) {
+                    current = target;
+                    clearInterval(counter);
+                }
+
+                // Format large numbers
+                if (target >= 1000) {
+                    stat.textContent = Math.floor(current).toLocaleString() + suffix;
+                } else {
+                    stat.textContent = Math.floor(current) + suffix;
+                }
+            }, 16);
+        });
+    }
+}
+
+window.addEventListener('scroll', animateStats);
+// Check on load too
+setTimeout(animateStats, 500);
+
+// ===== Orbit Skill Interactions =====
+const orbitItems = document.querySelectorAll('.orbit-item');
+const coreInner = document.querySelector('.core-inner');
+const skillCards = document.querySelectorAll('.skill-detail-card');
+
+function showSkillDetail(skillName) {
+    skillCards.forEach(card => {
+        card.classList.remove('active');
+        if (card.dataset.detail === skillName) {
+            card.classList.add('active');
+        }
+    });
+}
+
+function showDefaultDetail() {
+    skillCards.forEach(card => {
+        card.classList.remove('active');
+        if (card.dataset.detail === 'default') {
+            card.classList.add('active');
+        }
+    });
+}
+
+orbitItems.forEach(item => {
+    item.addEventListener('mouseenter', () => {
+        const skillName = item.dataset.skill;
+        showSkillDetail(skillName);
+    });
+
+    item.addEventListener('mouseleave', () => {
+        showDefaultDetail();
+    });
+
+    // Also add cursor hover effect
+    item.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
+    item.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
+});
+
+if (coreInner) {
+    coreInner.addEventListener('mouseenter', () => {
+        showSkillDetail('Python');
+    });
+
+    coreInner.addEventListener('mouseleave', () => {
+        showDefaultDetail();
+    });
+
+    coreInner.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
+    coreInner.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
+}
+
+// ===== Enhanced Scroll Reveal for Stats =====
+const statsCards = document.querySelectorAll('.stat-card');
+statsCards.forEach((card, index) => {
+    card.style.opacity = '0';
+    card.style.transform = 'translateY(20px)';
+    card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    card.style.transitionDelay = `${index * 0.1}s`;
+});
+
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, { threshold: 0.1 });
+
+statsCards.forEach(card => statsObserver.observe(card));
+
+// ===== Terminal Window Hover Effect =====
+const terminalWindow = document.querySelector('.terminal-window');
+if (terminalWindow) {
+    terminalWindow.addEventListener('mouseenter', () => cursorOutline.classList.add('hover'));
+    terminalWindow.addEventListener('mouseleave', () => cursorOutline.classList.remove('hover'));
 }

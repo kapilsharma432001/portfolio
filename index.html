@@ -54,6 +54,28 @@
                 <span class="badge-dot"></span>
                 Available for work
             </div>
+
+            <!-- Terminal Window -->
+            <div class="terminal-window">
+                <div class="terminal-header">
+                    <div class="terminal-buttons">
+                        <span class="terminal-btn terminal-close"></span>
+                        <span class="terminal-btn terminal-minimize"></span>
+                        <span class="terminal-btn terminal-maximize"></span>
+                    </div>
+                    <div class="terminal-title">kapil@portfolio ~ zsh</div>
+                </div>
+                <div class="terminal-body">
+                    <div class="terminal-line">
+                        <span class="terminal-prompt">➜</span>
+                        <span class="terminal-path">~/kapil</span>
+                        <span class="terminal-command" id="typing-command"></span>
+                        <span class="terminal-cursor">▋</span>
+                    </div>
+                    <div class="terminal-output" id="terminal-output"></div>
+                </div>
+            </div>
+
             <h1 class="hero-title">
                 <span class="title-line">I build things</span>
                 <span class="title-line">for the <span class="title-accent">backend</span></span>
@@ -88,8 +110,9 @@
             </div>
         </div>
         <div class="scroll-hint">
-            <span>scroll</span>
-            <div class="scroll-line"></div>
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
         </div>
     </section>
 
@@ -126,7 +149,7 @@
                             <span class="status-dot pulse"></span>
                             Currently
                         </div>
-                        <p>Senior Application Engineer @ Tiger Analytics — building claim processing systems with a
+                        <p>Senior Application Engineer @ Tiger Analytics - building claim processing systems with a
                             sprinkle of AI.</p>
                     </div>
                     <div class="quick-facts">
@@ -141,6 +164,26 @@
                         <div class="fact">
                             <span class="fact-label">Education</span>
                             <span class="fact-value">B.Tech CS '21</span>
+                        </div>
+                    </div>
+
+                    <!-- Animated Stats Section -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="40000" data-suffix="+">0</div>
+                            <div class="stat-label">Emails/Day Processed</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="90" data-suffix="%+">0</div>
+                            <div class="stat-label">Test Coverage</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="4" data-suffix=".5+">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-target="50" data-suffix="+">0</div>
+                            <div class="stat-label">APIs Built</div>
                         </div>
                     </div>
                 </div>
@@ -174,7 +217,7 @@
                         <ul class="work-highlights">
                             <li>Designed an email workflow that delivers ~40K emails/day using EventBridge + SES</li>
                             <li>Built FastAPI microservices with 90%+ test coverage (yes, really)</li>
-                            <li>Integrated LLM-based decision support — it's like having a junior dev that never sleeps
+                            <li>Integrated LLM-based decision support - it's like having a junior dev that never sleeps
                             </li>
                             <li>Wrangled DynamoDB and PostgreSQL into playing nice together</li>
                         </ul>
@@ -206,9 +249,9 @@
                         </p>
                         <ul class="work-highlights">
                             <li>Improved API throughput by 15-17% through some serious query detective work</li>
-                            <li>Helped build Inseego's SDWAN platform — thousands of edge devices, one codebase</li>
+                            <li>Helped build Inseego's SDWAN platform - thousands of edge devices, one codebase</li>
                             <li>Built real-time video streaming with WebRTC (latency is a cruel mistress)</li>
-                            <li>Created an HR chatbot with RAG — it actually understood company policies better than
+                            <li>Created an HR chatbot with RAG - it actually understood company policies better than
                                 most humans</li>
                         </ul>
                         <div class="work-stack">
@@ -231,46 +274,161 @@
             <div class="section-label">Skills</div>
             <h2 class="section-heading">My toolkit</h2>
             <p class="section-subheading">
-                Tools I reach for when building things. Some I love, some I've learned to tolerate.
+                Tools I reach for when building things. Hover over the orbit to explore!
             </p>
 
-            <div class="skills-masonry">
-                <div class="skill-block skill-large">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <h3>Python</h3>
-                    <p>My daily driver. FastAPI for APIs, Django when I need batteries included, Celery for "I'll
-                        process this later".</p>
+            <div class="skills-orbit-container">
+                <!-- Orbital Visualization -->
+                <div class="orbit-system">
+                    <!-- Center Core -->
+                    <div class="orbit-core">
+                        <div class="core-inner">
+                            <i class="fab fa-python"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="core-pulse"></div>
+                        <div class="core-pulse core-pulse-2"></div>
+                    </div>
+
+                    <!-- Inner Orbit -->
+                    <div class="orbit orbit-1">
+                        <div class="orbit-ring"></div>
+                        <div class="orbit-item" data-skill="FastAPI" style="--angle: 0deg;">
+                            <div class="orbit-icon"><i class="fas fa-bolt"></i></div>
+                            <span class="orbit-label">FastAPI</span>
+                        </div>
+                        <div class="orbit-item" data-skill="Django" style="--angle: 90deg;">
+                            <div class="orbit-icon"><i class="fas fa-leaf"></i></div>
+                            <span class="orbit-label">Django</span>
+                        </div>
+                        <div class="orbit-item" data-skill="PostgreSQL" style="--angle: 180deg;">
+                            <div class="orbit-icon"><i class="fas fa-database"></i></div>
+                            <span class="orbit-label">PostgreSQL</span>
+                        </div>
+                        <div class="orbit-item" data-skill="Redis" style="--angle: 270deg;">
+                            <div class="orbit-icon"><i class="fas fa-server"></i></div>
+                            <span class="orbit-label">Redis</span>
+                        </div>
+                    </div>
+
+                    <!-- Middle Orbit -->
+                    <div class="orbit orbit-2">
+                        <div class="orbit-ring"></div>
+                        <div class="orbit-item" data-skill="AWS" style="--angle: 30deg;">
+                            <div class="orbit-icon"><i class="fab fa-aws"></i></div>
+                            <span class="orbit-label">AWS</span>
+                        </div>
+                        <div class="orbit-item" data-skill="Docker" style="--angle: 120deg;">
+                            <div class="orbit-icon"><i class="fab fa-docker"></i></div>
+                            <span class="orbit-label">Docker</span>
+                        </div>
+                        <div class="orbit-item" data-skill="LangChain" style="--angle: 210deg;">
+                            <div class="orbit-icon"><i class="fas fa-brain"></i></div>
+                            <span class="orbit-label">LangChain</span>
+                        </div>
+                        <div class="orbit-item" data-skill="MongoDB" style="--angle: 300deg;">
+                            <div class="orbit-icon"><i class="fas fa-leaf"></i></div>
+                            <span class="orbit-label">MongoDB</span>
+                        </div>
+                    </div>
+
+                    <!-- Outer Orbit -->
+                    <div class="orbit orbit-3">
+                        <div class="orbit-ring"></div>
+                        <div class="orbit-item" data-skill="Terraform" style="--angle: 0deg;">
+                            <div class="orbit-icon"><i class="fas fa-cubes"></i></div>
+                            <span class="orbit-label">Terraform</span>
+                        </div>
+                        <div class="orbit-item" data-skill="WebRTC" style="--angle: 72deg;">
+                            <div class="orbit-icon"><i class="fas fa-video"></i></div>
+                            <span class="orbit-label">WebRTC</span>
+                        </div>
+                        <div class="orbit-item" data-skill="Celery" style="--angle: 144deg;">
+                            <div class="orbit-icon"><i class="fas fa-tasks"></i></div>
+                            <span class="orbit-label">Celery</span>
+                        </div>
+                        <div class="orbit-item" data-skill="GitHub Actions" style="--angle: 216deg;">
+                            <div class="orbit-icon"><i class="fab fa-github"></i></div>
+                            <span class="orbit-label">Actions</span>
+                        </div>
+                        <div class="orbit-item" data-skill="MQTT" style="--angle: 288deg;">
+                            <div class="orbit-icon"><i class="fas fa-wifi"></i></div>
+                            <span class="orbit-label">MQTT</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="skill-block">
-                    <div class="skill-icon"><i class="fab fa-aws"></i></div>
-                    <h3>AWS</h3>
-                    <p>Lambda, ECS, SQS, SES - I've probably forgotten more services than I remember.</p>
-                </div>
-
-                <div class="skill-block">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h3>Databases</h3>
-                    <p>PostgreSQL is home. MongoDB for documents. Redis for "make it faster". DynamoDB for when I need
-                        scale.</p>
-                </div>
-
-                <div class="skill-block skill-accent">
-                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
-                    <h3>AI/LLM</h3>
-                    <p>LangChain, OpenAI API, RAG pipelines. Teaching machines to be useful, one prompt at a time.</p>
-                </div>
-
-                <div class="skill-block">
-                    <div class="skill-icon"><i class="fab fa-docker"></i></div>
-                    <h3>DevOps</h3>
-                    <p>Docker, Terraform, GitHub Actions. If it can be automated, it should be automated.</p>
-                </div>
-
-                <div class="skill-block">
-                    <div class="skill-icon"><i class="fas fa-plug"></i></div>
-                    <h3>Protocols</h3>
-                    <p>REST, WebSocket, MQTT, WebRTC. Whatever gets the data where it needs to go.</p>
+                <!-- Skill Details Panel -->
+                <div class="skill-details-panel">
+                    <div class="skill-detail-card" data-detail="Python">
+                        <h3><i class="fab fa-python"></i> Python</h3>
+                        <p>My daily driver. FastAPI for APIs, Django when I need batteries included, Celery for "I'll
+                            process this later".</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="FastAPI">
+                        <h3><i class="fas fa-bolt"></i> FastAPI</h3>
+                        <p>High-performance async APIs with automatic OpenAPI docs. My go-to for new microservices.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="Django">
+                        <h3><i class="fas fa-leaf"></i> Django</h3>
+                        <p>When I need the full battery-included experience. ORM, admin panel, and years of
+                            battle-tested reliability.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="AWS">
+                        <h3><i class="fab fa-aws"></i> AWS</h3>
+                        <p>Lambda, ECS, SQS, SES, DynamoDB - I've probably forgotten more services than I remember.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="Docker">
+                        <h3><i class="fab fa-docker"></i> Docker</h3>
+                        <p>Containerizing everything since 2021. "It works on my machine" is now a deployment strategy.
+                        </p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="PostgreSQL">
+                        <h3><i class="fas fa-database"></i> PostgreSQL</h3>
+                        <p>The database that feels like home. Complex queries, JSONB, and rock-solid reliability.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="LangChain">
+                        <h3><i class="fas fa-brain"></i> LangChain</h3>
+                        <p>Building RAG pipelines and teaching LLMs to make sensible decisions. AI-powered backends.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="Redis">
+                        <h3><i class="fas fa-server"></i> Redis</h3>
+                        <p>Lightning-fast caching, session management, and pub/sub messaging. The speed demon in my
+                            stack.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="MongoDB">
+                        <h3><i class="fas fa-leaf"></i> MongoDB</h3>
+                        <p>When schemas are more of a suggestion. Perfect for flexible document storage and rapid
+                            prototyping.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="Terraform">
+                        <h3><i class="fas fa-cubes"></i> Terraform</h3>
+                        <p>Infrastructure as code that actually works. Managing cloud resources without the console
+                            chaos.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="WebRTC">
+                        <h3><i class="fas fa-video"></i> WebRTC</h3>
+                        <p>Real-time video streaming and peer-to-peer communication. Latency is indeed a cruel mistress.
+                        </p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="Celery">
+                        <h3><i class="fas fa-tasks"></i> Celery</h3>
+                        <p>Distributed task queues for when "I'll process this later" becomes a business requirement.
+                        </p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="GitHub Actions">
+                        <h3><i class="fab fa-github"></i> GitHub Actions</h3>
+                        <p>CI/CD pipelines that deploy while I sleep. Automated testing, building, and deployment.</p>
+                    </div>
+                    <div class="skill-detail-card" data-detail="MQTT">
+                        <h3><i class="fas fa-wifi"></i> MQTT</h3>
+                        <p>Lightweight messaging for IoT devices. Managing thousands of connected edge devices
+                            efficiently.</p>
+                    </div>
+                    <div class="skill-detail-card active" data-detail="default">
+                        <h3><i class="fas fa-rocket"></i> My Tech Universe</h3>
+                        <p>Hover over any technology in the orbit to learn more about how I use it in my projects!</p>
+                    </div>
                 </div>
             </div>
         </div>

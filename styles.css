@@ -360,38 +360,48 @@ em {
 }
 
 .scroll-hint {
-    position: absolute;
-    bottom: 40px;
+    position: fixed;
+    bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 12px;
-    color: var(--text-muted);
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 0.15em;
+    z-index: 10;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.3s ease;
 }
 
-.scroll-line {
-    width: 1px;
-    height: 60px;
-    background: linear-gradient(to bottom, var(--text-muted), transparent);
-    animation: scroll-hint 2s infinite;
+.scroll-mouse {
+    width: 20px;
+    height: 32px;
+    border: 2px solid var(--text-muted);
+    border-radius: 12px;
+    position: relative;
+    opacity: 0.6;
 }
 
-@keyframes scroll-hint {
+.scroll-wheel {
+    width: 3px;
+    height: 6px;
+    background: var(--accent);
+    border-radius: 2px;
+    position: absolute;
+    left: 50%;
+    top: 6px;
+    transform: translateX(-50%);
+    animation: scroll-wheel 1.5s ease-in-out infinite;
+}
+
+@keyframes scroll-wheel {
 
     0%,
     100% {
         opacity: 1;
-        transform: scaleY(1);
+        top: 6px;
     }
 
     50% {
         opacity: 0.3;
-        transform: scaleY(0.5);
+        top: 14px;
     }
 }
 
@@ -806,6 +816,7 @@ em {
         justify-content: space-between;
     }
 }
+
 /* Resume Download Button Accent */
 .hero-link-accent {
     background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 100%);
@@ -819,4 +830,595 @@ em {
 
 .hero-link-accent .link-icon {
     color: var(--accent);
+}
+
+/* ===== Terminal Window ===== */
+.terminal-window {
+    background: rgba(20, 20, 20, 0.9);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    max-width: 600px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+}
+
+.terminal-header {
+    background: rgba(40, 40, 40, 0.8);
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+.terminal-btn {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.terminal-close {
+    background: #ff5f56;
+}
+
+.terminal-minimize {
+    background: #ffbd2e;
+}
+
+.terminal-maximize {
+    background: #27c93f;
+}
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.terminal-body {
+    padding: 20px;
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    min-height: 120px;
+}
+
+.terminal-line {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.terminal-prompt {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.terminal-path {
+    color: #38bdf8;
+}
+
+.terminal-command {
+    color: var(--text-primary);
+}
+
+.terminal-cursor {
+    color: var(--accent);
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    50% {
+        opacity: 1;
+    }
+
+    51%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.terminal-output {
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+.terminal-output .output-line {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeInLine 0.3s ease forwards;
+}
+
+@keyframes fadeInLine {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ===== Animated Stats ===== */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.stat-card {
+    background: linear-gradient(135deg, var(--bg-card) 0%, rgba(94, 234, 212, 0.05) 100%);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s var(--ease-out);
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(94, 234, 212, 0.1), transparent);
+    transition: left 0.6s ease;
+}
+
+.stat-card:hover::before {
+    left: 100%;
+}
+
+.stat-card:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px rgba(94, 234, 212, 0.1);
+}
+
+.stat-number {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    margin-bottom: 4px;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* ===== Orbit System ===== */
+.skills-orbit-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    min-height: 500px;
+}
+
+.orbit-system {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: 0 auto;
+}
+
+.orbit-core {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    z-index: 10;
+}
+
+.core-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--accent) 0%, #a78bfa 100%);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--bg-dark);
+    font-weight: 600;
+    box-shadow: 0 0 40px var(--accent-glow);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.core-inner:hover {
+    transform: scale(1.1);
+}
+
+.core-inner i {
+    font-size: 2rem;
+    margin-bottom: 4px;
+}
+
+.core-inner span {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.core-pulse {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    border: 2px solid var(--accent);
+    border-radius: 50%;
+    animation: corePulse 2s infinite;
+}
+
+.core-pulse-2 {
+    animation-delay: 1s;
+}
+
+@keyframes corePulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(2);
+        opacity: 0;
+    }
+}
+
+/* Orbit Rings */
+.orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+}
+
+.orbit-ring {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px dashed var(--border);
+    border-radius: 50%;
+}
+
+.orbit-1 {
+    width: 200px;
+    height: 200px;
+    transform: translate(-50%, -50%);
+    animation: spin 30s linear infinite;
+}
+
+.orbit-2 {
+    width: 280px;
+    height: 280px;
+    transform: translate(-50%, -50%);
+    animation: spin 45s linear infinite reverse;
+}
+
+.orbit-3 {
+    width: 360px;
+    height: 360px;
+    transform: translate(-50%, -50%);
+    animation: spin 60s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    to {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+/* Orbit Items */
+.orbit-item {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    transform: rotate(var(--angle)) translateX(calc(var(--orbit-radius, 100px))) rotate(calc(-1 * var(--angle)));
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.orbit-1 .orbit-item {
+    --orbit-radius: 100px;
+}
+
+.orbit-2 .orbit-item {
+    --orbit-radius: 140px;
+}
+
+.orbit-3 .orbit-item {
+    --orbit-radius: 180px;
+}
+
+/* Keep icons upright during rotation */
+.orbit-1 .orbit-item {
+    animation: counterSpin 30s linear infinite;
+}
+
+.orbit-2 .orbit-item {
+    animation: counterSpin 45s linear infinite reverse;
+}
+
+.orbit-3 .orbit-item {
+    animation: counterSpin 60s linear infinite;
+}
+
+@keyframes counterSpin {
+    from {
+        transform: rotate(var(--angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--angle) + 0deg));
+    }
+
+    to {
+        transform: rotate(var(--angle)) translateX(var(--orbit-radius)) rotate(calc(-1 * var(--angle) + -360deg));
+    }
+}
+
+.orbit-icon {
+    width: 50px;
+    height: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    color: var(--accent);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.orbit-item:hover .orbit-icon {
+    background: var(--accent);
+    color: var(--bg-dark);
+    transform: scale(1.2);
+    box-shadow: 0 0 30px var(--accent-glow);
+}
+
+.orbit-label {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 4px;
+    font-size: 0.65rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.orbit-item:hover .orbit-label {
+    opacity: 1;
+}
+
+/* Skill Details Panel */
+.skill-details-panel {
+    position: relative;
+}
+
+.skill-detail-card {
+    display: none;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    animation: fadeInCard 0.3s ease;
+}
+
+.skill-detail-card.active {
+    display: block;
+}
+
+@keyframes fadeInCard {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-detail-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.skill-detail-card h3 i {
+    color: var(--accent);
+}
+
+.skill-detail-card p {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+/* Pause animations on hover */
+.orbit-system:hover .orbit {
+    animation-play-state: paused;
+}
+
+.orbit-system:hover .orbit-item {
+    animation-play-state: paused;
+}
+
+/* ===== Responsive for New Features ===== */
+@media (max-width: 900px) {
+    .skills-orbit-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .orbit-system {
+        width: 320px;
+        height: 320px;
+    }
+
+    .orbit-1 {
+        width: 160px;
+        height: 160px;
+    }
+
+    .orbit-2 {
+        width: 220px;
+        height: 220px;
+    }
+
+    .orbit-3 {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbit-1 .orbit-item {
+        --orbit-radius: 80px;
+    }
+
+    .orbit-2 .orbit-item {
+        --orbit-radius: 110px;
+    }
+
+    .orbit-3 .orbit-item {
+        --orbit-radius: 140px;
+    }
+
+    .orbit-item {
+        width: 40px;
+        height: 40px;
+        margin: -20px 0 0 -20px;
+    }
+
+    .orbit-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .stats-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .terminal-window {
+        margin-bottom: 32px;
+    }
+
+    .terminal-body {
+        font-size: 0.8rem;
+        padding: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .orbit-system {
+        width: 280px;
+        height: 280px;
+    }
+
+    .orbit-1 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .orbit-2 {
+        width: 190px;
+        height: 190px;
+    }
+
+    .orbit-3 {
+        width: 240px;
+        height: 240px;
+    }
+
+    .orbit-1 .orbit-item {
+        --orbit-radius: 70px;
+    }
+
+    .orbit-2 .orbit-item {
+        --orbit-radius: 95px;
+    }
+
+    .orbit-3 .orbit-item {
+        --orbit-radius: 120px;
+    }
+
+    .orbit-item {
+        width: 36px;
+        height: 36px;
+        margin: -18px 0 0 -18px;
+    }
+
+    .orbit-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    .core-inner {
+        width: 70px;
+        height: 70px;
+    }
+
+    .orbit-core {
+        width: 70px;
+        height: 70px;
+    }
+
+    .core-pulse {
+        width: 70px;
+        height: 70px;
+    }
+
+    .core-inner i {
+        font-size: 1.5rem;
+    }
+
+    .skill-detail-card {
+        padding: 20px;
+    }
+
+    .skill-detail-card h3 {
+        font-size: 1.2rem;
+    }
 }
