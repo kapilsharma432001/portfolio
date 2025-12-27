@@ -806,3 +806,17 @@ em {
         justify-content: space-between;
     }
 }
+/* Resume Download Button Accent */
+.hero-link-accent {
+    background: linear-gradient(135deg, var(--accent-dim) 0%, transparent 100%);
+    border-color: rgba(94, 234, 212, 0.3);
+}
+
+.hero-link-accent:hover {
+    background: var(--accent-dim);
+    border-color: var(--accent);
+}
+
+.hero-link-accent .link-icon {
+    color: var(--accent);
+}
