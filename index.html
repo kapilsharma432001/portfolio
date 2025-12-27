@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Kapil Sharma - Backend Engineer who loves turning coffee into scalable APIs. Python enthusiast, AWS explorer, and occasional bug whisperer.">
+    <meta name="keywords"
+        content="Backend Developer, Python Developer, Django, FastAPI, AWS, Software Engineer, Kapil Sharma">
+    <meta name="author" content="Kapil Sharma">
+    <title>Kapil Sharma — Backend Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Custom Cursor -->
+    <div class="cursor-dot" id="cursor-dot"></div>
+    <div class="cursor-outline" id="cursor-outline"></div>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">
+                <span class="logo-text">kapil</span><span class="logo-dot">.</span>
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link active" data-text="home">home</a></li>
+                <li><a href="#about" class="nav-link" data-text="about">about</a></li>
+                <li><a href="#work" class="nav-link" data-text="work">work</a></li>
+                <li><a href="#skills" class="nav-link" data-text="skills">skills</a></li>
+                <li><a href="#contact" class="nav-link" data-text="contact">contact</a></li>
+            </ul>
+            <div class="nav-toggle" id="nav-toggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-badge">
+                <span class="badge-dot"></span>
+                Available for work
+            </div>
+            <h1 class="hero-title">
+                <span class="title-line">I build things</span>
+                <span class="title-line">for the <span class="title-accent">backend</span></span>
+            </h1>
+            <p class="hero-subtitle">
+                Hi, I'm <strong>Kapil</strong> — a backend engineer who enjoys turning complex problems
+                into elegant APIs. Currently crafting microservices at <span class="company-highlight">Tiger
+                    Analytics</span>
+                and occasionally teaching machines to think.
+            </p>
+            <div class="hero-links">
+                <a href="https://github.com/kapilsharma432001" target="_blank" class="hero-link">
+                    <span class="link-icon"><i class="fab fa-github"></i></span>
+                    <span class="link-text">GitHub</span>
+                    <span class="link-arrow">↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/kapil-sharma-37274b1a0/" target="_blank" class="hero-link">
+                    <span class="link-icon"><i class="fab fa-linkedin-in"></i></span>
+                    <span class="link-text">LinkedIn</span>
+                    <span class="link-arrow">↗</span>
+                </a>
+                <a href="mailto:kapil.sharma.dev04@gmail.com" class="hero-link">
+                    <span class="link-icon"><i class="fas fa-envelope"></i></span>
+                    <span class="link-text">Email</span>
+                    <span class="link-arrow">↗</span>
+                </a>
+            </div>
+        </div>
+        <div class="scroll-hint">
+            <span>scroll</span>
+            <div class="scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-label">About</div>
+            <div class="about-grid">
+                <div class="about-main">
+                    <h2 class="about-heading">
+                        I've spent the last <span class="text-gradient">4.5 years</span> building
+                        systems that don't break at 3 AM.
+                    </h2>
+                    <div class="about-paragraphs">
+                        <p>
+                            Back in 2021, I wrote my first production API and watched it handle real traffic.
+                            That feeling of seeing code work at scale? Still chasing it.
+                        </p>
+                        <p>
+                            These days, I work on event-driven architectures that process
+                            <strong>~40,000 emails daily</strong>, build FastAPI services that actually
+                            survive production, and occasionally convince LLMs to make sensible decisions.
+                        </p>
+                        <p>
+                            When I'm not debugging race conditions or arguing with Docker, you'll find me
+                            exploring new AWS services or figuring out why my Terraform plan differs from apply.
+                            <em>(It's always the state file.)</em>
+                        </p>
+                    </div>
+                </div>
+                <div class="about-sidebar">
+                    <div class="current-status">
+                        <div class="status-header">
+                            <span class="status-dot pulse"></span>
+                            Currently
+                        </div>
+                        <p>Senior Application Engineer @ Tiger Analytics — building claim processing systems with a
+                            sprinkle of AI.</p>
+                    </div>
+                    <div class="quick-facts">
+                        <div class="fact">
+                            <span class="fact-label">Based in</span>
+                            <span class="fact-value">India 🇮🇳</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-label">Experience</span>
+                            <span class="fact-value">4.5+ years</span>
+                        </div>
+                        <div class="fact">
+                            <span class="fact-label">Education</span>
+                            <span class="fact-value">B.Tech CS '21</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work Section -->
+    <section id="work" class="section section-dark">
+        <div class="container">
+            <div class="section-label">Experience</div>
+            <h2 class="section-heading">Where I've worked</h2>
+
+            <div class="work-list">
+                <article class="work-item" data-company="tiger">
+                    <div class="work-header">
+                        <div class="work-company">
+                            <h3>Tiger Analytics</h3>
+                            <span class="work-role">Senior Application Engineer</span>
+                        </div>
+                        <div class="work-meta">
+                            <span class="work-date">Oct 2024 → Present</span>
+                            <span class="work-type">Remote</span>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <p class="work-summary">
+                            Building the backend for an insurance claim processing platform. Lots of FastAPI,
+                            event-driven workflows, and teaching LLMs to validate claims without going rogue.
+                        </p>
+                        <ul class="work-highlights">
+                            <li>Designed an email workflow that delivers ~40K emails/day using EventBridge + SES</li>
+                            <li>Built FastAPI microservices with 90%+ test coverage (yes, really)</li>
+                            <li>Integrated LLM-based decision support — it's like having a junior dev that never sleeps
+                            </li>
+                            <li>Wrangled DynamoDB and PostgreSQL into playing nice together</li>
+                        </ul>
+                        <div class="work-stack">
+                            <span>FastAPI</span>
+                            <span>AWS</span>
+                            <span>PostgreSQL</span>
+                            <span>DynamoDB</span>
+                            <span>LangChain</span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="work-item" data-company="vvdn">
+                    <div class="work-header">
+                        <div class="work-company">
+                            <h3>VVDN Technologies</h3>
+                            <span class="work-role">Software Engineer</span>
+                        </div>
+                        <div class="work-meta">
+                            <span class="work-date">Jan 2021 → Oct 2024</span>
+                            <span class="work-type">Gurugram</span>
+                        </div>
+                    </div>
+                    <div class="work-content">
+                        <p class="work-summary">
+                            The place where I learned that "it works on my machine" isn't a valid deployment strategy.
+                            Built everything from IoT dashboards to HR chatbots.
+                        </p>
+                        <ul class="work-highlights">
+                            <li>Improved API throughput by 15-17% through some serious query detective work</li>
+                            <li>Helped build Inseego's SDWAN platform — thousands of edge devices, one codebase</li>
+                            <li>Built real-time video streaming with WebRTC (latency is a cruel mistress)</li>
+                            <li>Created an HR chatbot with RAG — it actually understood company policies better than
+                                most humans</li>
+                        </ul>
+                        <div class="work-stack">
+                            <span>Django</span>
+                            <span>Python</span>
+                            <span>PostgreSQL</span>
+                            <span>MongoDB</span>
+                            <span>MQTT</span>
+                            <span>WebRTC</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <div class="section-label">Skills</div>
+            <h2 class="section-heading">My toolkit</h2>
+            <p class="section-subheading">
+                Tools I reach for when building things. Some I love, some I've learned to tolerate.
+            </p>
+
+            <div class="skills-masonry">
+                <div class="skill-block skill-large">
+                    <div class="skill-icon"><i class="fab fa-python"></i></div>
+                    <h3>Python</h3>
+                    <p>My daily driver. FastAPI for APIs, Django when I need batteries included, Celery for "I'll
+                        process this later".</p>
+                </div>
+
+                <div class="skill-block">
+                    <div class="skill-icon"><i class="fab fa-aws"></i></div>
+                    <h3>AWS</h3>
+                    <p>Lambda, ECS, SQS, SES — I've probably forgotten more services than I remember.</p>
+                </div>
+
+                <div class="skill-block">
+                    <div class="skill-icon"><i class="fas fa-database"></i></div>
+                    <h3>Databases</h3>
+                    <p>PostgreSQL is home. MongoDB for documents. Redis for "make it faster". DynamoDB for when I need
+                        scale.</p>
+                </div>
+
+                <div class="skill-block skill-accent">
+                    <div class="skill-icon"><i class="fas fa-brain"></i></div>
+                    <h3>AI/LLM</h3>
+                    <p>LangChain, OpenAI API, RAG pipelines. Teaching machines to be useful, one prompt at a time.</p>
+                </div>
+
+                <div class="skill-block">
+                    <div class="skill-icon"><i class="fab fa-docker"></i></div>
+                    <h3>DevOps</h3>
+                    <p>Docker, Terraform, GitHub Actions. If it can be automated, it should be automated.</p>
+                </div>
+
+                <div class="skill-block">
+                    <div class="skill-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Protocols</h3>
+                    <p>REST, WebSocket, MQTT, WebRTC. Whatever gets the data where it needs to go.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-dark">
+        <div class="container">
+            <div class="contact-layout">
+                <div class="contact-main">
+                    <div class="section-label">Contact</div>
+                    <h2 class="contact-heading">
+                        Got a project in mind?<br>
+                        <span class="text-gradient">Let's talk.</span>
+                    </h2>
+                    <p class="contact-text">
+                        I'm always interested in hearing about new opportunities,
+                        interesting projects, or just geeking out about backend architecture.
+                        Drop me a line!
+                    </p>
+                    <a href="mailto:kapil.sharma.dev04@gmail.com" class="contact-email">
+                        kapil.sharma.dev04@gmail.com
+                        <span class="email-arrow">→</span>
+                    </a>
+                </div>
+                <div class="contact-aside">
+                    <div class="contact-links">
+                        <a href="https://github.com/kapilsharma432001" target="_blank" class="contact-link-item">
+                            <i class="fab fa-github"></i>
+                            <span>GitHub</span>
+                        </a>
+                        <a href="https://www.linkedin.com/in/kapil-sharma-37274b1a0/" target="_blank"
+                            class="contact-link-item">
+                            <i class="fab fa-linkedin-in"></i>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="tel:+917300761811" class="contact-link-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+91 7300761811</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Built with too much coffee and a questionable amount of CSS.</p>
+                <p class="footer-year">© 2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

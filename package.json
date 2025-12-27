@@ -1,0 +1,11 @@
+{
+  "name": "kapil-sharma-portfolio",
+  "version": "1.0.0",
+  "description": "Portfolio website for Kapil Sharma - Senior Backend Engineer",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve ."
+  },
+  "author": "Kapil Sharma",
+  "license": "MIT"
+}
