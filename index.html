@@ -5,484 +5,472 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Kapil Sharma - Backend Engineer who loves turning coffee into scalable APIs. Python enthusiast, AWS explorer, and occasional bug whisperer.">
+        content="Backend and AI systems engineer building production-grade APIs, event-driven workflows, and GenAI/RAG systems with Python, FastAPI, Django, AWS, and PostgreSQL.">
     <meta name="keywords"
-        content="Backend Developer, Python Developer, Django, FastAPI, AWS, Software Engineer, Kapil Sharma">
+        content="Kapil Sharma, Backend Engineer, AI Systems Engineer, Python, FastAPI, Django, AWS, PostgreSQL, RAG, LangChain">
     <meta name="author" content="Kapil Sharma">
-    <title>Kapil Sharma — Backend Engineer</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <meta name="theme-color" content="#07090f">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Kapil Sharma | Backend &amp; AI Systems Engineer">
+    <meta property="og:description"
+        content="Backend and AI systems engineer building production-grade APIs, event-driven workflows, and GenAI/RAG systems with Python, FastAPI, Django, AWS, and PostgreSQL.">
+    <meta property="og:url" content="https://kapilsharma432001.github.io/portfolio/">
+    <meta property="og:site_name" content="Kapil Sharma Portfolio">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Kapil Sharma | Backend &amp; AI Systems Engineer">
+    <meta name="twitter:description"
+        content="Production-grade APIs, event-driven systems, and AI-powered backend workflows.">
+
+    <title>Kapil Sharma | Backend &amp; AI Systems Engineer</title>
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="styles.css">
+    <script>document.documentElement.classList.add('js');</script>
 </head>
 
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor-dot" id="cursor-dot"></div>
-    <div class="cursor-outline" id="cursor-outline"></div>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-    <!-- Noise Overlay -->
-    <div class="noise-overlay"></div>
-
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <a href="#home" class="nav-logo">
-                <span class="logo-text">kapil</span><span class="logo-dot">.</span>
+    <header class="site-header" id="top">
+        <nav class="nav" aria-label="Primary navigation">
+            <a class="nav-brand" href="#home" aria-label="Kapil Sharma home">
+                <span class="brand-mark" aria-hidden="true">KS</span>
+                <span class="brand-text">Kapil Sharma</span>
             </a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="#home" class="nav-link active" data-text="home">home</a></li>
-                <li><a href="#about" class="nav-link" data-text="about">about</a></li>
-                <li><a href="#work" class="nav-link" data-text="work">work</a></li>
-                <li><a href="#skills" class="nav-link" data-text="skills">skills</a></li>
-                <li><a href="#contact" class="nav-link" data-text="contact">contact</a></li>
+
+            <button class="nav-toggle" id="navToggle" type="button" aria-label="Open navigation menu"
+                aria-controls="primaryNav" aria-expanded="false">
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="primaryNav">
+                <li><a class="nav-link active" href="#home">Home</a></li>
+                <li><a class="nav-link" href="#experience">Experience</a></li>
+                <li><a class="nav-link" href="#projects">Projects</a></li>
+                <li><a class="nav-link" href="#skills">Skills</a></li>
+                <li><a class="nav-link" href="#systems">Systems</a></li>
+                <li><a class="nav-link" href="#contact">Contact</a></li>
             </ul>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
+        </nav>
+    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Available for work
-            </div>
-
-            <!-- Terminal Window -->
-            <div class="terminal-window">
-                <div class="terminal-header">
-                    <div class="terminal-buttons">
-                        <span class="terminal-btn terminal-close"></span>
-                        <span class="terminal-btn terminal-minimize"></span>
-                        <span class="terminal-btn terminal-maximize"></span>
-                    </div>
-                    <div class="terminal-title">kapil@portfolio ~ zsh</div>
-                </div>
-                <div class="terminal-body">
-                    <div class="terminal-line">
-                        <span class="terminal-prompt">➜</span>
-                        <span class="terminal-path">~/kapil</span>
-                        <span class="terminal-command" id="typing-command"></span>
-                        <span class="terminal-cursor">▋</span>
-                    </div>
-                    <div class="terminal-output" id="terminal-output"></div>
-                </div>
-            </div>
-
-            <h1 class="hero-title">
-                <span class="title-line">I build things</span>
-                <span class="title-line">for the <span class="title-accent">backend</span></span>
-            </h1>
-            <p class="hero-subtitle">
-                Hi, I'm <strong>Kapil</strong> - a backend engineer who enjoys turning complex problems
-                into elegant APIs. Currently crafting microservices at <span class="company-highlight">Tiger
-                    Analytics</span>
-                and occasionally teaching machines to think.
-            </p>
-            <div class="hero-links">
-                <a href="https://github.com/kapilsharma432001" target="_blank" class="hero-link">
-                    <span class="link-icon"><i class="fab fa-github"></i></span>
-                    <span class="link-text">GitHub</span>
-                    <span class="link-arrow">↗</span>
-                </a>
-                <a href="https://www.linkedin.com/in/kapil-sharma-37274b1a0/" target="_blank" class="hero-link">
-                    <span class="link-icon"><i class="fab fa-linkedin-in"></i></span>
-                    <span class="link-text">LinkedIn</span>
-                    <span class="link-arrow">↗</span>
-                </a>
-                <a href="mailto:kapil.sharma.dev04@gmail.com" class="hero-link">
-                    <span class="link-icon"><i class="fas fa-envelope"></i></span>
-                    <span class="link-text">Email</span>
-                    <span class="link-arrow">↗</span>
-                </a>
-                <a href="Kapil-Sharma-Backend-Developer.pdf" download class="hero-link hero-link-accent">
-                    <span class="link-icon"><i class="fas fa-file-arrow-down"></i></span>
-                    <span class="link-text">Resume</span>
-                    <span class="link-arrow">↓</span>
-                </a>
-            </div>
-        </div>
-        <div class="scroll-hint">
-            <div class="scroll-mouse">
-                <div class="scroll-wheel"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <div class="section-label">About</div>
-            <div class="about-grid">
-                <div class="about-main">
-                    <h2 class="about-heading">
-                        I've spent the last <span class="text-gradient">4.5 years</span> building
-                        systems that don't break at 3 AM.
-                    </h2>
-                    <div class="about-paragraphs">
-                        <p>
-                            Back in 2021, I wrote my first production API and watched it handle real traffic.
-                            That feeling of seeing code work at scale? Still chasing it.
-                        </p>
-                        <p>
-                            These days, I work on event-driven architectures that process
-                            <strong>~40,000 emails daily</strong>, build FastAPI services that actually
-                            survive production, and occasionally convince LLMs to make sensible decisions.
-                        </p>
-                        <p>
-                            When I'm not debugging race conditions or arguing with Docker, you'll find me
-                            exploring new AWS services or figuring out why my Terraform plan differs from apply.
-                            <em>(It's always the state file.)</em>
-                        </p>
-                    </div>
-                </div>
-                <div class="about-sidebar">
-                    <div class="current-status">
-                        <div class="status-header">
-                            <span class="status-dot pulse"></span>
-                            Currently
-                        </div>
-                        <p>Senior Application Engineer @ Tiger Analytics - building claim processing systems with a
-                            sprinkle of AI.</p>
-                    </div>
-                    <div class="quick-facts">
-                        <div class="fact">
-                            <span class="fact-label">Based in</span>
-                            <span class="fact-value">India 🇮🇳</span>
-                        </div>
-                        <div class="fact">
-                            <span class="fact-label">Experience</span>
-                            <span class="fact-value">4.5+ years</span>
-                        </div>
-                        <div class="fact">
-                            <span class="fact-label">Education</span>
-                            <span class="fact-value">B.Tech CS '21</span>
-                        </div>
-                    </div>
-
-                    <!-- Animated Stats Section -->
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="40000" data-suffix="+">0</div>
-                            <div class="stat-label">Emails/Day Processed</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="90" data-suffix="%+">0</div>
-                            <div class="stat-label">Test Coverage</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="4" data-suffix=".5+">0</div>
-                            <div class="stat-label">Years Experience</div>
-                        </div>
-                        <div class="stat-card">
-                            <div class="stat-number" data-target="50" data-suffix="+">0</div>
-                            <div class="stat-label">APIs Built</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Work Section -->
-    <section id="work" class="section section-dark">
-        <div class="container">
-            <div class="section-label">Experience</div>
-            <h2 class="section-heading">Where I've worked</h2>
-
-            <div class="work-list">
-                <article class="work-item" data-company="tiger">
-                    <div class="work-header">
-                        <div class="work-company">
-                            <h3>Tiger Analytics</h3>
-                            <span class="work-role">Senior Application Engineer</span>
-                        </div>
-                        <div class="work-meta">
-                            <span class="work-date">Oct 2024 → Present</span>
-                            <span class="work-type">Remote</span>
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <p class="work-summary">
-                            Building the backend for an insurance claim processing platform. Lots of FastAPI,
-                            event-driven workflows, and teaching LLMs to validate claims without going rogue.
-                        </p>
-                        <ul class="work-highlights">
-                            <li>Designed an email workflow that delivers ~40K emails/day using EventBridge + SES</li>
-                            <li>Built FastAPI microservices with 90%+ test coverage (yes, really)</li>
-                            <li>Integrated LLM-based decision support - it's like having a junior dev that never sleeps
-                            </li>
-                            <li>Wrangled DynamoDB and PostgreSQL into playing nice together</li>
-                        </ul>
-                        <div class="work-stack">
-                            <span>FastAPI</span>
-                            <span>AWS</span>
-                            <span>PostgreSQL</span>
-                            <span>DynamoDB</span>
-                            <span>LangChain</span>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="work-item" data-company="vvdn">
-                    <div class="work-header">
-                        <div class="work-company">
-                            <h3>VVDN Technologies</h3>
-                            <span class="work-role">Software Engineer</span>
-                        </div>
-                        <div class="work-meta">
-                            <span class="work-date">Jan 2021 → Oct 2024</span>
-                            <span class="work-type">Gurugram</span>
-                        </div>
-                    </div>
-                    <div class="work-content">
-                        <p class="work-summary">
-                            The place where I learned that "it works on my machine" isn't a valid deployment strategy.
-                            Built everything from IoT dashboards to HR chatbots.
-                        </p>
-                        <ul class="work-highlights">
-                            <li>Improved API throughput by 15-17% through some serious query detective work</li>
-                            <li>Helped build Inseego's SDWAN platform - thousands of edge devices, one codebase</li>
-                            <li>Built real-time video streaming with WebRTC (latency is a cruel mistress)</li>
-                            <li>Created an HR chatbot with RAG - it actually understood company policies better than
-                                most humans</li>
-                        </ul>
-                        <div class="work-stack">
-                            <span>Django</span>
-                            <span>Python</span>
-                            <span>PostgreSQL</span>
-                            <span>MongoDB</span>
-                            <span>MQTT</span>
-                            <span>WebRTC</span>
-                        </div>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <div class="section-label">Skills</div>
-            <h2 class="section-heading">My toolkit</h2>
-            <p class="section-subheading">
-                Tools I reach for when building things. Hover over the orbit to explore!
-            </p>
-
-            <div class="skills-orbit-container">
-                <!-- Orbital Visualization -->
-                <div class="orbit-system">
-                    <!-- Center Core -->
-                    <div class="orbit-core">
-                        <div class="core-inner">
-                            <i class="fab fa-python"></i>
-                            <span>Python</span>
-                        </div>
-                        <div class="core-pulse"></div>
-                        <div class="core-pulse core-pulse-2"></div>
-                    </div>
-
-                    <!-- Inner Orbit -->
-                    <div class="orbit orbit-1">
-                        <div class="orbit-ring"></div>
-                        <div class="orbit-item" data-skill="FastAPI" style="--angle: 0deg;">
-                            <div class="orbit-icon"><i class="fas fa-bolt"></i></div>
-                            <span class="orbit-label">FastAPI</span>
-                        </div>
-                        <div class="orbit-item" data-skill="Django" style="--angle: 90deg;">
-                            <div class="orbit-icon"><i class="fas fa-leaf"></i></div>
-                            <span class="orbit-label">Django</span>
-                        </div>
-                        <div class="orbit-item" data-skill="PostgreSQL" style="--angle: 180deg;">
-                            <div class="orbit-icon"><i class="fas fa-database"></i></div>
-                            <span class="orbit-label">PostgreSQL</span>
-                        </div>
-                        <div class="orbit-item" data-skill="Redis" style="--angle: 270deg;">
-                            <div class="orbit-icon"><i class="fas fa-server"></i></div>
-                            <span class="orbit-label">Redis</span>
-                        </div>
-                    </div>
-
-                    <!-- Middle Orbit -->
-                    <div class="orbit orbit-2">
-                        <div class="orbit-ring"></div>
-                        <div class="orbit-item" data-skill="AWS" style="--angle: 30deg;">
-                            <div class="orbit-icon"><i class="fab fa-aws"></i></div>
-                            <span class="orbit-label">AWS</span>
-                        </div>
-                        <div class="orbit-item" data-skill="Docker" style="--angle: 120deg;">
-                            <div class="orbit-icon"><i class="fab fa-docker"></i></div>
-                            <span class="orbit-label">Docker</span>
-                        </div>
-                        <div class="orbit-item" data-skill="LangChain" style="--angle: 210deg;">
-                            <div class="orbit-icon"><i class="fas fa-brain"></i></div>
-                            <span class="orbit-label">LangChain</span>
-                        </div>
-                        <div class="orbit-item" data-skill="MongoDB" style="--angle: 300deg;">
-                            <div class="orbit-icon"><i class="fas fa-leaf"></i></div>
-                            <span class="orbit-label">MongoDB</span>
-                        </div>
-                    </div>
-
-                    <!-- Outer Orbit -->
-                    <div class="orbit orbit-3">
-                        <div class="orbit-ring"></div>
-                        <div class="orbit-item" data-skill="Terraform" style="--angle: 0deg;">
-                            <div class="orbit-icon"><i class="fas fa-cubes"></i></div>
-                            <span class="orbit-label">Terraform</span>
-                        </div>
-                        <div class="orbit-item" data-skill="WebRTC" style="--angle: 72deg;">
-                            <div class="orbit-icon"><i class="fas fa-video"></i></div>
-                            <span class="orbit-label">WebRTC</span>
-                        </div>
-                        <div class="orbit-item" data-skill="Celery" style="--angle: 144deg;">
-                            <div class="orbit-icon"><i class="fas fa-tasks"></i></div>
-                            <span class="orbit-label">Celery</span>
-                        </div>
-                        <div class="orbit-item" data-skill="GitHub Actions" style="--angle: 216deg;">
-                            <div class="orbit-icon"><i class="fab fa-github"></i></div>
-                            <span class="orbit-label">Actions</span>
-                        </div>
-                        <div class="orbit-item" data-skill="MQTT" style="--angle: 288deg;">
-                            <div class="orbit-icon"><i class="fas fa-wifi"></i></div>
-                            <span class="orbit-label">MQTT</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Skill Details Panel -->
-                <div class="skill-details-panel">
-                    <div class="skill-detail-card" data-detail="Python">
-                        <h3><i class="fab fa-python"></i> Python</h3>
-                        <p>My daily driver. FastAPI for APIs, Django when I need batteries included, Celery for "I'll
-                            process this later".</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="FastAPI">
-                        <h3><i class="fas fa-bolt"></i> FastAPI</h3>
-                        <p>High-performance async APIs with automatic OpenAPI docs. My go-to for new microservices.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="Django">
-                        <h3><i class="fas fa-leaf"></i> Django</h3>
-                        <p>When I need the full battery-included experience. ORM, admin panel, and years of
-                            battle-tested reliability.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="AWS">
-                        <h3><i class="fab fa-aws"></i> AWS</h3>
-                        <p>Lambda, ECS, SQS, SES, DynamoDB - I've probably forgotten more services than I remember.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="Docker">
-                        <h3><i class="fab fa-docker"></i> Docker</h3>
-                        <p>Containerizing everything since 2021. "It works on my machine" is now a deployment strategy.
-                        </p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="PostgreSQL">
-                        <h3><i class="fas fa-database"></i> PostgreSQL</h3>
-                        <p>The database that feels like home. Complex queries, JSONB, and rock-solid reliability.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="LangChain">
-                        <h3><i class="fas fa-brain"></i> LangChain</h3>
-                        <p>Building RAG pipelines and teaching LLMs to make sensible decisions. AI-powered backends.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="Redis">
-                        <h3><i class="fas fa-server"></i> Redis</h3>
-                        <p>Lightning-fast caching, session management, and pub/sub messaging. The speed demon in my
-                            stack.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="MongoDB">
-                        <h3><i class="fas fa-leaf"></i> MongoDB</h3>
-                        <p>When schemas are more of a suggestion. Perfect for flexible document storage and rapid
-                            prototyping.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="Terraform">
-                        <h3><i class="fas fa-cubes"></i> Terraform</h3>
-                        <p>Infrastructure as code that actually works. Managing cloud resources without the console
-                            chaos.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="WebRTC">
-                        <h3><i class="fas fa-video"></i> WebRTC</h3>
-                        <p>Real-time video streaming and peer-to-peer communication. Latency is indeed a cruel mistress.
-                        </p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="Celery">
-                        <h3><i class="fas fa-tasks"></i> Celery</h3>
-                        <p>Distributed task queues for when "I'll process this later" becomes a business requirement.
-                        </p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="GitHub Actions">
-                        <h3><i class="fab fa-github"></i> GitHub Actions</h3>
-                        <p>CI/CD pipelines that deploy while I sleep. Automated testing, building, and deployment.</p>
-                    </div>
-                    <div class="skill-detail-card" data-detail="MQTT">
-                        <h3><i class="fas fa-wifi"></i> MQTT</h3>
-                        <p>Lightweight messaging for IoT devices. Managing thousands of connected edge devices
-                            efficiently.</p>
-                    </div>
-                    <div class="skill-detail-card active" data-detail="default">
-                        <h3><i class="fas fa-rocket"></i> My Tech Universe</h3>
-                        <p>Hover over any technology in the orbit to learn more about how I use it in my projects!</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="section section-dark">
-        <div class="container">
-            <div class="contact-layout">
-                <div class="contact-main">
-                    <div class="section-label">Contact</div>
-                    <h2 class="contact-heading">
-                        Got a project in mind?<br>
-                        <span class="text-gradient">Let's talk.</span>
-                    </h2>
-                    <p class="contact-text">
-                        I'm always interested in hearing about new opportunities,
-                        interesting projects, or just geeking out about backend architecture.
-                        Drop me a line!
+    <main id="main">
+        <section class="hero section-shell" id="home" aria-labelledby="hero-title">
+            <div class="hero-grid">
+                <div class="hero-copy reveal">
+                    <p class="eyebrow">Backend &amp; AI Systems Engineer</p>
+                    <h1 id="hero-title">Backend &amp; AI Systems Engineer</h1>
+                    <p class="hero-subtitle">
+                        I build production-grade APIs, event-driven systems, and AI-powered backend workflows with
+                        Python, FastAPI, Django, AWS, and RAG.
                     </p>
-                    <a href="mailto:kapil.sharma.dev04@gmail.com" class="contact-email">
-                        kapil.sharma.dev04@gmail.com
-                        <span class="email-arrow">→</span>
-                    </a>
+
+                    <div class="hero-proof" aria-label="Professional proof points">
+                        <span>4.5+ years backend experience</span>
+                        <span>Senior Application Engineer @ Tiger Analytics</span>
+                        <span>Python, FastAPI, Django, AWS</span>
+                        <span>Event-driven systems and distributed workflows</span>
+                        <span>Production GenAI / RAG / LLM integrations</span>
+                        <span>Approx 40k emails/day workflow</span>
+                        <span>90%+ test coverage in production backend services</span>
+                    </div>
+
+                    <div class="hero-actions" aria-label="Primary actions">
+                        <a class="button button-primary" href="#projects">View Projects</a>
+                        <a class="button button-secondary" href="Kapil-Sharma-Backend-Developer.pdf" download>Download
+                            Resume</a>
+                        <a class="button button-ghost" href="https://github.com/kapilsharma432001" target="_blank"
+                            rel="noreferrer">GitHub</a>
+                        <a class="button button-ghost" href="https://www.linkedin.com/in/kapil-sharma-37274b1a0/"
+                            target="_blank" rel="noreferrer">LinkedIn</a>
+                    </div>
                 </div>
-                <div class="contact-aside">
-                    <div class="contact-links">
-                        <a href="https://github.com/kapilsharma432001" target="_blank" class="contact-link-item">
-                            <i class="fab fa-github"></i>
-                            <span>GitHub</span>
-                        </a>
-                        <a href="https://www.linkedin.com/in/kapil-sharma-37274b1a0/" target="_blank"
-                            class="contact-link-item">
-                            <i class="fab fa-linkedin-in"></i>
-                            <span>LinkedIn</span>
-                        </a>
-                        <a href="tel:+917300761811" class="contact-link-item">
-                            <i class="fas fa-phone-alt"></i>
-                            <span>+91 7300761811</span>
-                        </a>
+
+                <aside class="system-card reveal" aria-label="Production backend systems summary">
+                    <div class="system-card-header">
+                        <div>
+                            <p class="card-kicker">Production Backend Systems</p>
+                            <h2>FastAPI &middot; AWS &middot; SQS &middot; PostgreSQL &middot; LangChain</h2>
+                        </div>
+                        <span class="status-pill">Production-focused</span>
+                    </div>
+
+                    <div class="architecture-map" aria-hidden="true">
+                        <div class="architecture-node node-api">
+                            <span>API</span>
+                            <strong>FastAPI</strong>
+                        </div>
+                        <div class="architecture-node node-events">
+                            <span>Events</span>
+                            <strong>SQS</strong>
+                        </div>
+                        <div class="architecture-node node-data">
+                            <span>Data</span>
+                            <strong>PostgreSQL</strong>
+                        </div>
+                        <div class="architecture-node node-ai">
+                            <span>AI</span>
+                            <strong>RAG</strong>
+                        </div>
+                    </div>
+
+                    <div class="signal-list">
+                        <p>Architecture Signals</p>
+                        <ul>
+                            <li>Event-driven workflows</li>
+                            <li>API-first microservices</li>
+                            <li>RAG / LLM decision support</li>
+                            <li>Observability &amp; testing</li>
+                            <li>Cloud-native deployment</li>
+                        </ul>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="metrics section-shell compact-section" aria-label="Credibility metrics">
+            <div class="metric-card reveal">
+                <strong>4.5+ yrs</strong>
+                <span>Backend engineering experience</span>
+            </div>
+            <div class="metric-card reveal">
+                <strong>~40k/day</strong>
+                <span>Automated email workflow volume</span>
+            </div>
+            <div class="metric-card reveal">
+                <strong>90%+</strong>
+                <span>Code coverage on production services</span>
+            </div>
+            <div class="metric-card reveal">
+                <strong>Microservices</strong>
+                <span>Production API and workflow ownership</span>
+            </div>
+            <div class="metric-card reveal">
+                <strong>AWS Events</strong>
+                <span>Lambda, SQS, EventBridge, SES</span>
+            </div>
+        </section>
+
+        <section class="section-shell about" id="about" aria-labelledby="about-title">
+            <div class="section-heading reveal">
+                <p class="eyebrow">About</p>
+                <h2 id="about-title">Reliable backend systems with practical AI engineering.</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-copy reveal">
+                    <p>
+                        I specialize in backend systems where reliability, clear APIs, asynchronous processing, and data
+                        consistency matter. My recent work combines FastAPI microservices, AWS event-driven
+                        architecture, PostgreSQL/DynamoDB data modeling, and LLM-based decision support for production
+                        workflows.
+                    </p>
+                    <p>
+                        I care about system design, performance optimization, production reliability, API contracts,
+                        observability, and test-driven development. The work I enjoy most sits at the intersection of
+                        distributed backend systems, cloud operations, and AI features that make real workflows faster
+                        without making them fragile.
+                    </p>
+                </div>
+                <div class="principles reveal" aria-label="Engineering focus areas">
+                    <div>
+                        <span>01</span>
+                        <p>Design APIs and contracts that stay understandable as teams and workflows grow.</p>
+                    </div>
+                    <div>
+                        <span>02</span>
+                        <p>Use queues, events, and background processing for predictable throughput and recovery.</p>
+                    </div>
+                    <div>
+                        <span>03</span>
+                        <p>Bring LLMs into backend systems with retrieval context, structured outputs, and tests.</p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <p>Built with too much coffee and a questionable amount of CSS.</p>
-                <p class="footer-year">© 2024</p>
+        <section class="section-shell" id="experience" aria-labelledby="experience-title">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Experience</p>
+                <h2 id="experience-title">Production backend ownership across cloud, data, and AI workflows.</h2>
             </div>
+
+            <div class="timeline">
+                <article class="experience-card reveal">
+                    <div class="experience-meta">
+                        <p class="role-company">Tiger Analytics</p>
+                        <h3>Senior Application Engineer</h3>
+                        <p>Oct 2024 - Present</p>
+                        <p>Remote/Hybrid</p>
+                    </div>
+                    <ul class="experience-list">
+                        <li>Designed and owned an event-driven automated email system using AWS EventBridge and Amazon
+                            SES, triggered every 15 minutes to process incremental claim updates and reliably deliver
+                            approx 40k emails/day.</li>
+                        <li>Designed, developed, and maintained FastAPI-based microservices supporting high-throughput
+                            claim processing in a production environment.</li>
+                        <li>Applied TDD with unit and integration tests, achieving 90%+ code coverage and reducing
+                            regression defects.</li>
+                        <li>Designed and optimized PostgreSQL schemas and DynamoDB data models for rule metadata, claim
+                            evidence, and audit logs.</li>
+                        <li>Built event-driven backend workflows using AWS Lambda and SQS, with ECS Fargate,
+                            CloudWatch, and EC2 for scalability, observability, and operational stability.</li>
+                        <li>Integrated LLM-based decision-support components using structured prompts and
+                            retrieval-augmented context for claim validation and decisioning workflows.</li>
+                        <li>Contributed to CI/CD pipelines, infrastructure-as-code, API contracts, test plans, and
+                            delivery milestones.</li>
+                    </ul>
+                </article>
+
+                <article class="experience-card reveal">
+                    <div class="experience-meta">
+                        <p class="role-company">VVDN Technologies</p>
+                        <h3>Software Engineer</h3>
+                        <p>Jan 2021 - Oct 2024</p>
+                        <p>Gurugram, India</p>
+                    </div>
+                    <ul class="experience-list">
+                        <li>Designed and maintained REST APIs using Django Rest Framework, improving throughput by
+                            15-17% through SQL query optimization and legacy backend refactoring.</li>
+                        <li>Developed backend features for Inseego's cloud-native SD-WAN platform using Python,
+                            PostgreSQL, and MongoDB to manage and orchestrate thousands of edge devices.</li>
+                        <li>Built real-time IoT integrations for NXP Home Assistant using MQTT and implemented WebRTC
+                            signaling for low-latency video streaming dashboards.</li>
+                        <li>Collaborated with global engineering teams to debug and resolve production issues,
+                            improving reliability and service availability.</li>
+                        <li>Contributed to an internal HR chatbot using OpenAI APIs and RAG to answer HR and
+                            policy-related queries from internal documentation.</li>
+                        <li>Mentored junior engineers and contributed to code reviews.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell" id="projects" aria-labelledby="projects-title">
+            <div class="section-heading split-heading reveal">
+                <div>
+                    <p class="eyebrow">Featured Projects</p>
+                    <h2 id="projects-title">Focused engineering projects with backend and systems depth.</h2>
+                </div>
+                <p>
+                    Selected builds that show release review automation, semantic memory, API orchestration, and system
+                    design practice without overstating production scale.
+                </p>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card reveal">
+                    <div class="project-topline">
+                        <span>Release Engineering</span>
+                        <a href="https://github.com/kapilsharma432001/ShipGuard" target="_blank"
+                            rel="noreferrer">GitHub</a>
+                    </div>
+                    <h3>ShipGuard &mdash; AI Release Risk Reviewer</h3>
+                    <p>
+                        Early-stage CLI that reviews local diffs and GitHub PRs for release-sensitive changes, CI blind
+                        spots, rollback concerns, and missing evidence. It produces advisory Markdown, JSON, and optional
+                        HTML reports using OpenAI-compatible model endpoints.
+                    </p>
+                    <ul class="tag-list" aria-label="ShipGuard technologies">
+                        <li>Python</li>
+                        <li>LLM</li>
+                        <li>GitHub PRs</li>
+                        <li>Release Risk</li>
+                        <li>CLI</li>
+                        <li>OpenAI-compatible APIs</li>
+                    </ul>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-topline">
+                        <span>Memory Systems</span>
+                        <a href="https://github.com/kapilsharma432001/SMARN" target="_blank"
+                            rel="noreferrer">GitHub</a>
+                    </div>
+                    <h3>SMARN &mdash; Self Memory Archive &amp; Recall Network</h3>
+                    <p>
+                        Backend memory and recall system that stores Telegram text and voice memories in PostgreSQL with
+                        pgvector, enriches entries, supports semantic recall, and can generate daily or weekly reviews.
+                    </p>
+                    <ul class="tag-list" aria-label="SMARN technologies">
+                        <li>FastAPI</li>
+                        <li>PostgreSQL</li>
+                        <li>pgvector</li>
+                        <li>SQLAlchemy</li>
+                        <li>Alembic</li>
+                        <li>Telegram Bot</li>
+                        <li>Embeddings</li>
+                    </ul>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-topline">
+                        <span>Local-first Tooling</span>
+                        <a href="https://github.com/kapilsharma432001/SvaraSetu" target="_blank"
+                            rel="noreferrer">GitHub</a>
+                    </div>
+                    <h3>SvaraSetu &mdash; Local-first YouTube Music Playlist Transfer</h3>
+                    <p>
+                        Local-first web app that uses the official YouTube Data API to copy liked YouTube/YouTube Music
+                        songs into a shareable playlist with OAuth, SQLite progress tracking, quota estimation, and
+                        resumable copy jobs.
+                    </p>
+                    <ul class="tag-list" aria-label="SvaraSetu technologies">
+                        <li>FastAPI</li>
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>SQLite</li>
+                        <li>OAuth 2.0</li>
+                        <li>YouTube Data API</li>
+                    </ul>
+                </article>
+
+                <article class="project-card reveal">
+                    <div class="project-topline">
+                        <span>System Design</span>
+                        <a href="https://github.com/kapilsharma432001/systems-from-scratch" target="_blank"
+                            rel="noreferrer">GitHub</a>
+                    </div>
+                    <h3>Systems From Scratch &mdash; Backend System Design Playbook</h3>
+                    <p>
+                        Personal system design playbook for backend engineering, distributed systems, scalability, and
+                        interview preparation. It documents fundamentals, key technologies, trade-offs, and system
+                        design breakdowns in Kapil's own notes.
+                    </p>
+                    <ul class="tag-list" aria-label="Systems From Scratch topics">
+                        <li>System Design</li>
+                        <li>Distributed Systems</li>
+                        <li>Scalability</li>
+                        <li>Backend Architecture</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell" id="skills" aria-labelledby="skills-title">
+            <div class="section-heading reveal">
+                <p class="eyebrow">Skills</p>
+                <h2 id="skills-title">Backend, cloud, data, and AI engineering toolkit.</h2>
+            </div>
+
+            <div class="skills-grid">
+                <article class="skill-card reveal">
+                    <h3>Backend &amp; Architecture</h3>
+                    <p>Python, FastAPI, Django REST Framework, Flask, Celery, Microservices, REST APIs, WebSocket,
+                        Pydantic</p>
+                </article>
+                <article class="skill-card reveal">
+                    <h3>Cloud &amp; DevOps</h3>
+                    <p>AWS Lambda, ECS Fargate, SQS, EventBridge, SES, CloudWatch, EC2, Docker, Terraform, GitHub
+                        Actions, CI/CD</p>
+                </article>
+                <article class="skill-card reveal">
+                    <h3>Databases &amp; Messaging</h3>
+                    <p>PostgreSQL, DynamoDB, MongoDB, Redis, MySQL, RabbitMQ, MQTT, SQS</p>
+                </article>
+                <article class="skill-card reveal">
+                    <h3>AI Engineering</h3>
+                    <p>LangChain, LangGraph, OpenAI API, RAG Pipelines, Vector Embeddings, Ollama, LiteLLM, RAGAS, MCP
+                    </p>
+                </article>
+                <article class="skill-card reveal">
+                    <h3>Engineering Practices</h3>
+                    <p>TDD, PyTest, API Design, System Design, Observability, Performance Optimization, Event-Driven
+                        Architecture, Distributed Systems</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell systems" id="systems" aria-labelledby="systems-title">
+            <div class="section-heading split-heading reveal">
+                <div>
+                    <p class="eyebrow">Engineering Notes &amp; System Design</p>
+                    <h2 id="systems-title">A serious practice around backend architecture trade-offs.</h2>
+                </div>
+                <a class="text-link" href="https://github.com/kapilsharma432001/systems-from-scratch" target="_blank"
+                    rel="noreferrer">Open systems-from-scratch</a>
+            </div>
+
+            <div class="notes-grid" aria-label="System design topics">
+                <article class="note-card reveal">
+                    <span>01</span>
+                    <h3>URL Shortener</h3>
+                    <p>API shape, key generation, redirect latency, storage strategy, and analytics trade-offs.</p>
+                </article>
+                <article class="note-card reveal">
+                    <span>02</span>
+                    <h3>Rate Limiter</h3>
+                    <p>Token buckets, fixed windows, distributed counters, fairness, and hot-key handling.</p>
+                </article>
+                <article class="note-card reveal">
+                    <span>03</span>
+                    <h3>Distributed Cache</h3>
+                    <p>Cache-aside patterns, invalidation, consistency boundaries, sharding, and failure modes.</p>
+                </article>
+                <article class="note-card reveal">
+                    <span>04</span>
+                    <h3>Notification System</h3>
+                    <p>Queues, retries, templates, provider failover, delivery tracking, and auditability.</p>
+                </article>
+                <article class="note-card reveal">
+                    <span>05</span>
+                    <h3>Queue-based Workflows</h3>
+                    <p>Idempotency, backpressure, dead-letter queues, ordering, and operational visibility.</p>
+                </article>
+                <article class="note-card reveal">
+                    <span>06</span>
+                    <h3>RAG Systems</h3>
+                    <p>Chunking, retrieval quality, evaluation, prompt structure, citations, and guardrails.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="section-shell education" aria-labelledby="education-title">
+            <div class="education-card reveal">
+                <div>
+                    <p class="eyebrow">Education</p>
+                    <h2 id="education-title">Dr. A.P.J. Abdul Kalam Technical University, Lucknow</h2>
+                </div>
+                <div class="education-details">
+                    <p>B.Tech in Computer Science &amp; Engineering</p>
+                    <p>2017 - 2021</p>
+                    <p>Percentage: 83.6</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-shell contact" id="contact" aria-labelledby="contact-title">
+            <div class="contact-card reveal">
+                <div>
+                    <p class="eyebrow">Contact</p>
+                    <h2 id="contact-title">Let's build reliable backend and AI systems.</h2>
+                    <p>
+                        For backend platform roles, AI engineering work, or architecture-focused collaboration, email is
+                        the best place to start.
+                    </p>
+                </div>
+
+                <div class="contact-actions" aria-label="Contact links">
+                    <a class="button button-primary" href="mailto:kapil.sharma.dev04@gmail.com">Email Kapil</a>
+                    <button class="button button-secondary" type="button" id="copyEmail"
+                        data-email="kapil.sharma.dev04@gmail.com">Copy Email</button>
+                    <a class="button button-ghost" href="https://github.com/kapilsharma432001" target="_blank"
+                        rel="noreferrer">GitHub</a>
+                    <a class="button button-ghost" href="https://www.linkedin.com/in/kapil-sharma-37274b1a0/"
+                        target="_blank" rel="noreferrer">LinkedIn</a>
+                    <a class="button button-ghost" href="Kapil-Sharma-Backend-Developer.pdf" download>Resume</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>
+            <strong>Kapil Sharma</strong>
+            <span>Backend &amp; AI Systems Engineer</span>
         </div>
+        <a href="#home">Back to top</a>
     </footer>
 
     <script src="script.js"></script>
