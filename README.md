@@ -1,15 +1,27 @@
 # Kapil Sharma Portfolio
 
-Static portfolio website for Kapil Sharma, positioned around backend engineering, event-driven cloud systems, and production AI/RAG workflows.
+A creative, responsive portfolio for Kapil Sharma, positioned around backend engineering, event-driven AWS systems, and practical GenAI/LLM workflows.
 
-## Tech Stack
+## Visual direction
 
-- Static HTML, CSS, and JavaScript
-- Semantic, accessible single-page layout
-- No frontend framework or build step
-- Served locally with `serve`
+The interface uses a playful console / neo-brutalist system:
 
-## Local Run
+- warm cream canvas with tomato, lavender, and amber accents;
+- bold condensed headings and monospace terminal copy;
+- hard-shadow cards, ticket-shaped project links, and annotation details;
+- responsive layouts with visible keyboard focus and reduced-motion support.
+
+## Content
+
+The July 2026 resume is the source of truth. The portfolio highlights:
+
+- production experience at Tiger Analytics and VVDN Technologies;
+- measurable engineering impact;
+- ShipGuard and SMARN as featured case studies;
+- SvaraSetu, DevDocs Copilot API, Systems From Scratch, and SMARN Dashboard;
+- the current technical toolkit and contact links.
+
+## Run locally
 
 ```bash
 npm start
@@ -23,20 +35,23 @@ npm run dev
 
 Both commands serve the repository root. Open the local URL printed by `serve`.
 
-## Deployment Notes
+## Deployment
 
-This site is static and can be deployed to GitHub Pages, Netlify, Vercel, Cloudflare Pages, or any static hosting provider. Deploy the repository root so `index.html`, `styles.css`, `script.js`, and the resume PDF are available at the same level.
+The project is static HTML, CSS, and JavaScript and can be deployed directly to GitHub Pages, Netlify, Vercel, or Cloudflare Pages.
 
-## Updating Resume
+For GitHub Pages, deploy the repository root from the `main` branch.
 
-The resume download links currently point to:
+## Updating the resume
+
+Resume links point to:
 
 ```text
-Kapil-Sharma-Backend-Developer.pdf
+Kapil-Sharma-Resume-July-2026.pdf
 ```
 
-Replace that file with a newer PDF or update the `href` values in `index.html` if the filename changes.
+Replace that file or update the link in `index.html` when publishing a newer resume.
 
-## Updating Projects
+## Updating projects
 
-Featured project cards are in the `#projects` section of `index.html`. Keep descriptions aligned with the project README files and avoid adding unsupported metrics or production claims.
+Keep project descriptions aligned with their repository README files. Avoid unsupported scale, production, or adoption claims.
+

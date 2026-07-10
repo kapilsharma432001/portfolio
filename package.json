@@ -1,7 +1,7 @@
 {
   "name": "kapil-sharma-portfolio",
-  "version": "1.0.0",
-  "description": "Portfolio website for Kapil Sharma - Backend and AI Systems Engineer",
+  "version": "2.0.0",
+  "description": "Creative portfolio for Kapil Sharma - Backend and AI Systems Engineer",
   "main": "index.html",
   "scripts": {
     "start": "npx serve .",
